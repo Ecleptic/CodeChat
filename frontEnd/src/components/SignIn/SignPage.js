@@ -2,6 +2,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+<<<<<<< HEAD
+=======
+//import uploadScreen from 'uploadScreen';
+import React, { Component } from 'react';
+>>>>>>> 0d727f6488c25a028649c20972f06e7f5bf84a51
 
 import React, { Component } from 'react';
 import './SignPage.css';
