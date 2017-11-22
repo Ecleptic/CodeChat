@@ -3,7 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import axios from 'axios';
+import './Register.css';
 
 class Register extends Component {
   constructor(props){
@@ -20,9 +20,10 @@ class Register extends Component {
     return (
       <div>
         <MuiThemeProvider>
+          
           <div>
           <AppBar
-             title="Register for CodeChat Cuck"
+             title="Register"
            />
            <TextField
              hintText="Enter your First Name"
@@ -59,6 +60,8 @@ class Register extends Component {
              />
            <br/>
            <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+           <RaisedButton label="Clear" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+
           </div>
          </MuiThemeProvider>
       </div>
