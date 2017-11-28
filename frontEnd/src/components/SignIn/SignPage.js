@@ -2,8 +2,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-//import axios from 'axios';
+import axios from 'axios';
 import React, { Component } from 'react';
+//import Register from './Register';
 import './SignPage.css';
 
 class Login extends Component {
@@ -14,7 +15,7 @@ constructor(props){
   password:''
   }
  }
-/*
+
  handleClick(event){
   var apiBaseUrl = "http://localhost:4000/api/";
   var self = this;
@@ -27,7 +28,7 @@ constructor(props){
   .then(function (response) {
   console.log(response);
   if(response.data.code === 200){
-  console.log("Login successfull");
+  console.log("Login successful");
   //var uploadScreen=[];
   //uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
   //self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
@@ -45,7 +46,8 @@ constructor(props){
   console.log(error);
   });
   }
-*/
+
+
 render() {
     return (
       <div className="SignPage">
@@ -79,7 +81,6 @@ render() {
 
   }
 }
-
 
 const style = {
  margin: 20,

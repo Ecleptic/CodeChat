@@ -15,12 +15,12 @@ class Register extends Component {
     this.state={
       first_name:'',
       last_name:'',
-     // Username:'',
+      username:'',
       email:'',
       password:''
     }
   }
-/*
+
   handleClick(event){
     var apiBaseUrl = "http://localhost:4000/api/";
     console.log("values",this.state.first_name,this.state.last_name,this.state.email,this.state.password);
@@ -29,17 +29,18 @@ class Register extends Component {
     var payload={
     "first_name": this.state.first_name,
     "last_name":this.state.last_name,
+    "username":this.state.username,
     "email":this.state.email,
     "password":this.state.password
     }
-    axios.post(apiBaseUrl+'/register', payload)
+    //axios.post(apiBaseUrl+'/register', payload) //IGNORE, not gonna to httprequests
    .then(function (response) {
      console.log(response);
      if(response.data.code === 200){
        console.log("registration successfull");
        var loginscreen=[];
        loginscreen.push(<SignPage parentContext={this}/>);
-       var loginmessage = "Not Registered yet.Go to registration";
+       var loginmessage = "Not Registered yet. Go to registration";
        self.props.parentContext.setState({loginscreen:loginscreen,
        loginmessage:loginmessage,
        buttonLabel:"Register",
@@ -51,8 +52,6 @@ class Register extends Component {
      console.log(error);
    });
   }
-*/
-
 
   render(){
 
@@ -86,13 +85,13 @@ class Register extends Component {
            <br/>
            <TextField
              hintText="Enter your Email"
-             type="email"
+             type="Email"
              floatingLabelText="Email"
              onChange = {(event,newValue) => this.setState({email:newValue})}
              />
            <br/>
            <TextField
-             type = "password"
+             type = "Password"
              hintText="Enter your Password"
              floatingLabelText="Password"
              onChange = {(event,newValue) => this.setState({password:newValue})}
