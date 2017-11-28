@@ -2,7 +2,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import axios from 'axios';
+//import axios from 'axios';
 import React, { Component } from 'react';
 //import Register from './Register';
 import './SignPage.css';
@@ -24,7 +24,7 @@ constructor(props){
   "email":this.state.username,
   "password": sha256.hex(this.state.password)
   }
-  axios.post(apiBaseUrl+'login', payload)
+  //axios.post(apiBaseUrl+'login', payload)
   .then(function (response) {
   console.log(response);
   if(response.data.code === 200){
