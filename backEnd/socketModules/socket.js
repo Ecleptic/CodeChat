@@ -128,6 +128,17 @@ module.exports = class Socket {
                     console.log("Registering new user: ", creds.Username, uuid)
                     dbcontroller.registerUser(uuid, creds.email, SHA256(creds.password), creds.Username, creds.first_name, creds.last_name, "")
                 })
+
+                socket.on('login', (creds) => {
+                    console.log("User logging in: ", creds.username)
+                    dbcontroller.check_login_creds(creds.username, SHA256(creds.password)).then(function(u_id){
+                      if(u_id != null)
+                      {
+                        var ch_id = 1 //Default channel?
+                        dbcontroller.Insert_Users_In_Channel(u_id, ch_id)
+                      }
+                    })
+                })
             })
     }
 

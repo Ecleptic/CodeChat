@@ -225,4 +225,14 @@ module.exports = class DBController {
             console.error(error)
         }
     }
+
+    async check_login_creds(u_email, u_pass) {
+        let checklogincreds
+        try {
+            checklogincreds = await postgresController.check_login_creds(u_email, u_pass)
+            // returns if succssessful in postgress
+        } catch (error) {
+            console.error(error)
+        }
+    }
 }

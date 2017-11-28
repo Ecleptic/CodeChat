@@ -68,7 +68,7 @@ render() {
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.props.socket.emit('login',{"username":this.state.username, "password":this.state.password})}/>
              <RaisedButton label="Clear" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
 
          </div>

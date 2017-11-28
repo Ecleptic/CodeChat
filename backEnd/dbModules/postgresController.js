@@ -74,7 +74,6 @@ module.exports = class PostgresController {
                 })
                 .catch(error => {
                     reject(error)
-                    console.log(error)
                 })
         })
     }
@@ -251,6 +250,17 @@ module.exports = class PostgresController {
         return new Promise((resolve, reject) => {
             console.log(`DELETE FROM "${Users_In_Channel}" WHERE "u_id" = '${u_id}' AND "ch_id" = '${ch_id}'`) // not sure how to set up a delete function
             client.any(`DELETE FROM "${Users_In_Channel}" WHERE "u_id" = '${u_id}' AND "ch_id" = '${ch_id}'`) // not sure ..^
+                .then(data => {
+                resolve(data)
+            }).catch(error => {
+                reject(error)
+            })
+        })
+    }
+
+    check_login_creds(u_email, u_pass) {
+        return new Promise((resolve, reject) => {
+            client.any(`SELECT "u_id" FROM "${Users}" WHERE "u_email" = '${u_email}' AND "u_pass" = '${u_pass}';`)
                 .then(data => {
                 resolve(data)
             }).catch(error => {
