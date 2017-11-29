@@ -51,9 +51,11 @@ constructor(props){
 render() {
     return (
       <div className="SignPage">
+      
+      <div className="SignPage body">
+
       <div>
         <MuiThemeProvider>
-          <div>
           <AppBar
              title="Sign-in"
            />
@@ -73,10 +75,17 @@ render() {
              <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.props.socket.emit('login',{"username":this.state.username, "password":this.state.password})}/>
              <RaisedButton label="Clear" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
 
-         </div>
+         
          </MuiThemeProvider>
+
+         </div>
       </div>
+      
       </div>
+              
+                
+      
+
     );
 
   }

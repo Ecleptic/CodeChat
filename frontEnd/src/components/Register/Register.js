@@ -56,7 +56,11 @@ class Register extends Component {
   render(){
 
     return (
-      <div className="Register">
+      <div className="register">
+
+      <div className="register register-body">
+
+
       <div>
         <MuiThemeProvider>       
           <div>
@@ -97,6 +101,7 @@ class Register extends Component {
              onChange = {(event,newValue) => this.setState({password:newValue})}
              />
            <br/>
+
            <AccountKit
            appId="148416749076090"
            version="v1.0" // Version must be in form v{major}.{minor}
@@ -111,6 +116,8 @@ class Register extends Component {
           </div>
          </MuiThemeProvider>
       </div>
+      </div>
+
       </div>
     );
 
